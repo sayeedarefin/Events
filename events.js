@@ -1,5 +1,11 @@
 console.log("Heyyyyyyyy");
 
+//event handling part
+function handleOnClick(){
+    const salamerJobab = document.getElementById('handler-Status');
+    salamerJobab.innerText = "Walaikumussalam";
+}
+
 //Make red button
 
 function MakeRed(){

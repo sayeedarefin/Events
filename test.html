@@ -1,0 +1,15 @@
+<p id="input-Text">Can you update this text?</p>
+<input id="input-Field" type="text">
+<button id="btn-Update">Update</button>
+
+<script>
+document.getElementById('btn-Update').addEventListener('click', function() {
+    const inputField = document.getElementById('input-Field');
+    const inputText = inputField.value;
+
+    const p = document.getElementById('input-Text');
+    p.innerText = inputText;
+
+    inputField.value = ''; // Clear the input field after updating the text
+});
+</script>
