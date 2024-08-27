@@ -1,15 +1,36 @@
-<p id="input-Text">Can you update this text?</p>
-<input id="input-Field" type="text">
-<button id="btn-Update">Update</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Delete</title>
+</head>
+<body>
+    <h1 id="event-Handler-1">Confirm your deletion process</h1>
+    <h1 id="event-Handler">Please write down "Delete" in the following box to confirm the deletion process</h1>
+    <input id="text-Delete" type="text" placeholder="Please input Delete">
+    <button onclick="changeOnClick()" id="btn-Delete" disabled>Delete</button>
 
-<script>
-document.getElementById('btn-Update').addEventListener('click', function() {
-    const inputField = document.getElementById('input-Field');
-    const inputText = inputField.value;
+    <script>
+        document.getElementById('text-Delete').addEventListener('keyup', function(event) {
+    const text = event.target.value.toLowerCase();  // Convert input text to lowercase
+    const deleteButton = document.getElementById('btn-Delete');
 
-    const p = document.getElementById('input-Text');
-    p.innerText = inputText;
-
-    inputField.value = ''; // Clear the input field after updating the text
+    if (text === 'delete') {
+        deleteButton.removeAttribute('disabled');
+    } else {
+        deleteButton.setAttribute('disabled', true);
+    }
 });
-</script>
+
+function changeOnClick() {
+    const changedText = document.getElementById('event-Handler');
+    changedText.innerText = "Your Repository has been successfully deleted!";
+    
+    const inputField = document.getElementById('text-Delete');
+    inputField.value = '';  // Clear the input field
+}
+
+    </script>
+</body>
+</html>
